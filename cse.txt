@@ -1,0 +1,11 @@
+https://www.googleapis.com/customsearch/v1element?key=AIzaSyCVAXiUzRYsML1Pv6RwSG1gunmMikTzQqY&rsz=filtered_cse&num=20&hl=en&lr=lang_de&source=gcsc&gss=.de&prettyPrint=false&start={PAGENUM}&cx=004415538554621685521:vgwa9iznfuo&q={KEYWORD}&googlehost=www.google.de&callback=google.search.Search.apiary17764
+
+
+https://www.googleapis.com/customsearch/v1element?key=AIzaSyCVAXiUzRYsML1Pv6RwSG1gunmMikTzQqY&rsz=filtered_cse&num=20&source=gcsc&start=1&cx=004415538554621685521:vgwa9iznfuo&q=wolke&callback=google.search.Search.apiary17764&googlehost=www.google.de&gl=de&gss=.de
+
+https://www.googleapis.com/customsearch/v1element?key=AIzaSyCVAXiUzRYsML1Pv6RwSG1gunmMikTzQqY&rsz=filtered_cse&num=20&hl=de&source=gcsc&gss=.de&prettyPrint=false&start={PAGENUM}&cx=004415538554621685521:vgwa9iznfuo&q={KEYWORD}&googlehost=www.google.de&callback=google.search.Search.apiary17764&gl=de
+
+https://www.googleapis.com/customsearch/v1element?key=AIzaSyCVAXiUzRYsML1Pv6RwSG1gunmMikTzQqY&rsz=filtered_cse&num=20&hl=en&prettyPrint=false&source=gcsc&gss=.com&start={PAGENUM}&cx=004415538554621685521:vgwa9iznfuo&q={KEYWORD}&googlehost=www.google.com&callback=google.search.Search.apiary17764
+
+
+https://www.googleapis.com/customsearch/v1element?key=AIzaSyCVAXiUzRYsML1Pv6RwSG1gunmMikTzQqY&rsz=filtered_cse&num=20&source=gcsc&start=1&cx=004415538554621685521:vgwa9iznfuo&q=wolke&googlehost=www.google.de&callback=google.search.Search.apiary17764&gss=.de

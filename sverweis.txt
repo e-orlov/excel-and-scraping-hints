@@ -1,0 +1,3 @@
+=SVERWEIS($C2;$L:$M;2;0)
+Wert aus der Spalte C (C2 usw) wird abgeglichen mit dem Wertepaar aus der Spalten L und M und dort, wo der Wert aus C mit dem Wert aus L übereinstimmt, wird in der Formelzeile der Wert aus M ausgegeben. Z. B. wenn C22 entspricht L33, so wird in M22 der Wert aus M33 ausgegeben
+=SVERWEIS($C2;$J:$K;2;0)

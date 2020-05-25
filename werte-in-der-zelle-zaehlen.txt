@@ -1,0 +1,22 @@
+=SUMME((LÄNGE(A:A)-LÄNGE(WECHSELN(A:A;B1;"")))/LÄNGE(B1))
+
+
+überprüft die genaue Schreibweise (GROSS / klein):
+{=SUMME((LÄNGE(A1:A10)-LÄNGE(WECHSELN(A1:A10;B1;"")))/LÄNGE(B1))}
+
+unterscheidet nicht, ob: der / Der / DER
+{=SUMME((LÄNGE(A1:A100)-LÄNGE(WECHSELN(KLEIN(A1:A100);KLEIN(B1);"")))/LÄNGE(B1))}
+
+
+Soll "der" nur alleinstehend gezählt werden ("der oder der" = 2 und nicht 3):
+{=SUMME((LÄNGE(" "&A1:A10&" ")-LÄNGE(WECHSELN(" "&A1:A10&" ";" "&B1&" ";"")))/(LÄNGE(B1)+2))}
+bzw.
+{=SUMME((LÄNGE(" "&A1:A10&" ")-LÄNGE(WECHSELN(" "&KLEIN(A1:A10)&" ";" "&KLEIN(B1)&" ";"")))/(LÄNGE(B1)+2))}
+
+Die Anzahl der Zellen, in denen "der" vorkommt, liefert:
+{=ANZAHL(SUCHEN(B1;A1:A100))}
+bzw. alleinstehend:
+{=ANZAHL(SUCHEN(" "&B1&" ";" "&A1:A100&" "))}
+
+=LÄNGE(A2) -LÄNGE( WECHSELN(A2;" ";""))+1
+Wörter in der Zelle zählen: zählt Leerstellen zwischen den Wörtern und addiert eine 1

@@ -1,0 +1,11 @@
+=importXml("myurl";; "//span[@class='new_price' and @id='final_price']")
+
+//*[contains(concat(" ", normalize-space(@class), " "), " foo ")]
+
+*[class~="foo"]
+
+
+<div class="foo bar baz">42</div>
+all nodes class="foo":		//*[count( index-of( tokenize( @class, '\s+' ), 'foo' ) ) = 1]
+
+

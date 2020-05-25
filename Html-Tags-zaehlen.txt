@@ -1,0 +1,7 @@
+=ZÄHLENWENN(c2;"*<strong*")		ja/nein
+
+
+=(LÄNGE($L2)-LÄNGE(WECHSELN($L2;B$1;"")))/LÄNGE(B$1)
+
+Content: $L2
+Tag:	 B$1

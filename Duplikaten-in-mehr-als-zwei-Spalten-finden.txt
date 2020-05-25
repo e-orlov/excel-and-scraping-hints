@@ -1,0 +1,7 @@
+=UND(ZÄHLENWENN($A$2:$A$48;A2)>0;ZÄHLENWENN($B$2:$B$48;A2)>0;ZÄHLENWENN($C$2:$C$48;A2)>0;ZÄHLENWENN($D$2:$D$48;A2)>0;ZÄHLENWENN($e$2:$e$48;A2)>0)
+Wahr - kommt in allen Kolumnen vor
+
+=UND(ZÄHLENWENN($A$2:$A$6000;A2)>0;ZÄHLENWENN($B$2:$B$6000;A2)>0;ZÄHLENWENN($C$2:$C$6000;A2)>0;ZÄHLENWENN($D$2:$D$6000;A2)>0;ZÄHLENWENN($e$2:$e$6000;A2)>0)
+
+=(ZÄHLENWENN($A$2:$A$6000;A2)>0)+(ZÄHLENWENN($B$2:$B$6000;A2)>0)+(ZÄHLENWENN($C$2:$C$6000;A2)>0)+(ZÄHLENWENN($D$2:$D$6000;A2)>0)+(ZÄHLENWENN($e$2:$e$6000;A2)>0)>1
+Falsch kommt nur in einer Kolumne vor, Wahr - kommt mindestens in zwei Kolumnen vor

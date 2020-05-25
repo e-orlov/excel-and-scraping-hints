@@ -1,0 +1,12 @@
+Sortieren am letzten Wort in der Spalte
+
+A2:A666 : Zu sortierende Wörter
+B2 : =LINKS(A2;FINDEN("#";WECHSELN(A2;" ";"#";LÄNGE(A2)-LÄNGE(WECHSELN(A2;" ";""))))) <!--Legt in B2 den ganzen Inhalt aus A2 außer dem letzten Wort-->
+C2 : =RECHTS(A2;LÄNGE(A2)-LÄNGE(B2)) <!--Legt in C2 das letzte Wort aus A2-->
+
+Sortieren am zweitletzten Wort in der Spalte
+
+A2:A666 : Zu sortierende Wörter
+B2 : =LINKS(A2;FINDEN("#";WECHSELN(A2;" ";"#";LÄNGE(A2)-LÄNGE(WECHSELN(A2;" ";""))))) <!--Legt in B2 den ganzen Inhalt aus A2 außer dem letzten Wort-->
+C2 : =LINKS(GLÄTTEN(B2);FINDEN("#";WECHSELN(GLÄTTEN(B2);" ";"#";LÄNGE(GLÄTTEN(B2))-LÄNGE(WECHSELN(GLÄTTEN(B2);" ";""))))) <!--Legt in C2 den ganzen Inhalt aus A2 außer zwei letzten Wörtern-->
+D2 : =RECHTS(A2;LÄNGE(A2)-LÄNGE(C2)) <!--Legt in D2 das letzte Wort aus A2-->

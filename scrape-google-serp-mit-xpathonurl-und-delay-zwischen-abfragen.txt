@@ -1,0 +1,7 @@
+Query not cached (Parameter FALSE), Delay 10 Millisekunden
+=XPathOnUrl("url","//h3[@class='r']/a","href",BuildHttpDownloaderConfig(FALSE, 10))
+
+Query cached (Parameter TRUE), Delay random, zwischen 10 und 100 Millisekunden
+=XPathOnUrl("url","//h3[@class='r']/a","href",HttpSettings(TRUE;;;RANDBETWEEN(10;100))
+
+HttpSettings(WAHR;;;"10000|10000|Host";;;;;;;;;;WAHR)

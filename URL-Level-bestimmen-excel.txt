@@ -1,0 +1,11 @@
+Textfilter in der Spalte
+.de/*/*/*.aspx
+endet mit / endet nicht mit
+
+oder
+
+=LÄNGE(A2) -LÄNGE( WECHSELN(A2;"/";""))-2
+Anzahl von Slashes) zählen (-2 am Ende steht dafür, dass beide Slashes nach http:// nicht mitgezählt werden)
+
+=LÄNGE(A2)-LÄNGE(WECHSELN(A2;" ";))+1
+zählt auch Leerstellen, um die KW-Länge zu sortieren

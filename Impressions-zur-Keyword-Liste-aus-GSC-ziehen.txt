@@ -1,0 +1,1 @@
+=Dump(Connector("GoogleSearchConsole.SearchAnalytics";"https://www.flyeralarm.com/de/";"2017-01-01";"2017-12-31";"query==" & A2;"web";"Impressions";WAHR;1))

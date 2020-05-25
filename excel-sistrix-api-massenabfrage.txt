@@ -1,0 +1,45 @@
+http://api.sistrix.net/xzy?extended=true
+
+http://api.sistrix.net/keyword.us?api_key=$key&kw=angela+merkel&date=now
+
+date=JJJJ-MM-TT
+
+=XPathOnUrl(VERKETTEN("http://api.sistrix.net/keyword.seo?api_key=BrWBmm8vbNK2drVGWSSxFChCD5Jbr2E6&kw=new%20mail&domain=mail.com&date=now&country=de");"response/answer/result";"url")
+
+&domain=gmx.co.uk&date=now&country=uk");"response/answer/result";"url")\r\n=XPathOnUrl(VERKETTEN("http://api.sistrix.net/keyword.seo?api_key=BrWBmm8vbNK2drVGWSSxFChCD5Jbr2E6&kw=
+
+&domain=gmx.co.uk&date=now&country=uk");"response/answer/result";"position")\r\n=XPathOnUrl(VERKETTEN("http://api.sistrix.net/keyword.seo?api_key=BrWBmm8vbNK2drVGWSSxFChCD5Jbr2E6&kw=
+
+?country=$country
+de – Deutschland
+at – Österreich
+ch – Schweiz
+us – USA
+uk – England
+es – Spanien
+fr – Frankreich
+it – Italien
+
+=XPathOnUrl(VERKETTEN("http://api.sistrix.net/keyword.domain.seo?api_key=BrWBmm8vbNK2drVGWSSxFChCD5Jbr2E6&domain=tambini.de&date=last%20year&country=de");"response/answer/result";"kw")
+
+=XPathOnUrl(VERKETTEN("http://api.sistrix.net/keyword.domain.seo?api_key=BrWBmm8vbNK2drVGWSSxFChCD5Jbr2E6&domain=tambini.de&date=last%20year&country=de");"response/answer/result";"position")
+
+=XPathOnUrl(VERKETTEN("http://api.sistrix.net/keyword.domain.seo?api_key=BrWBmm8vbNK2drVGWSSxFChCD5Jbr2E6&domain=tambini.de&date=last%20year&country=de");"response/answer/result";"competition")
+
+=XPathOnUrl(VERKETTEN("http://api.sistrix.net/keyword.domain.seo?api_key=BrWBmm8vbNK2drVGWSSxFChCD5Jbr2E6&domain=tambini.de&date=last%20year&country=de");"response/answer/result";"traffic")
+
+=XPathOnUrl(VERKETTEN("http://api.sistrix.net/keyword.domain.seo?api_key=BrWBmm8vbNK2drVGWSSxFChCD5Jbr2E6&domain=tambini.de&date=last%20year&country=de");"response/answer/result";"url")
+
+http://api.sistrix.net/keyword.domain.seo?api_key=$key&domain=bonn.de&date=now&host=www.bonn.de
+
+https://api.sistrix.com/keyword.us?api_key=BrWBmm8vbNK2drVGWSSxFChCD5Jbr2E6&kw=elektroauto&date=now
+
+=Dump(Connector("Sistrix.KeywordUs";"elektroauto";FALSCH;"de";"type,position,position.intern,url";FALSCH))
+
+=XPathOnUrl(VERKETTEN("http://api.sistrix.net/keyword.seo?api_key=BrWBmm8vbNK2drVGWSSxFChCD5Jbr2E6&kw="&c3&"&domain=cosmosdirekt.de&date=now&country=de&url="&b3);"response/answer/result";"position")
+
+=XPathOnUrl(VERKETTEN("http://api.sistrix.net/keyword.seo?api_key=BrWBmm8vbNK2drVGWSSxFChCD5Jbr2E6&kw="&a1&"&date=now&country=de&num=10");"response/answer/result";"position")
+
+=Dump(XPathOnUrl(VERKETTEN("http://api.sistrix.net/keyword.seo?api_key=BrWBmm8vbNK2drVGWSSxFChCD5Jbr2E6&kw="&a1&"&date=now&country=de&num=10");WAHR))
+
+=importXML("http://api.sistrix.net/keyword.seo?api_key=BrWBmm8vbNK2drVGWSSxFChCD5Jbr2E6&kw="&A4&"&domain="&D4&"&date=2016-09-04&country=de&url="&C4,"//@position")

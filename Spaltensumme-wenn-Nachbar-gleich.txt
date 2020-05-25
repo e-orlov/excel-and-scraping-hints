@@ -1,0 +1,2 @@
+=summewenn(b:b;b2;c:c)
+in c sind die zu summierenden Werte, in b sind die Nachbarn, die gleich sind oder nicht

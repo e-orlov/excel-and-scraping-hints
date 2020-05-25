@@ -1,0 +1,29 @@
+1. URLs der Seite holen
+
+2. Mit iMacro Bild-URLs sammeln (pages.csv - URLs der Seite)
+******
+VERSION BUILD=8881205 RECORDER=FX
+SET !ERRORIGNORE YES
+TAB T=1
+SET !DATASOURCE pages.csv 
+SET !DATASOURCE_COLUMNS 1
+SET !LOOP 1
+SET !DATASOURCE_LINE {{!LOOP}}
+URL GOTO={{!COL1}}
+WAIT SECONDS=7
+URL GOTO=javascript:(function(){let<SP>di<SP>=<SP>window.document.images;let<SP>csv<SP>=<SP>"";for(let<SP>i=0,l=di.length,img=di[i];i<l;++i,img=di[i]){let<SP>w=img.width,h=img.height,nw=img.naturalWidth,nh=img.naturalHeight;csv<SP>+=<SP>window.location.href+","+img.src+","+w+","+h+","+nw+","+nh+"\r\n";};window.document.body.innerHTML<SP>=<SP>"<textarea<SP>id=csv<SP>rows=10<SP>cols=150<SP>wrap=off>"+csv+"</textarea>"})();
+TAG POS=1 TYPE=TEXTAREA ATTR=ID:csv EXTRACT=TXT
+
+
+SAVEAS TYPE=EXTRACT FOLDER=* FILE=results.csv
+
+3. results.csv in Excel öffnen. Spalten-Reihenfolge: Seiten-URL, Bild-URL, width, height, naturalWidth, naturalHeight
+
+4. In Excel - Formel-Basis:
+
+C - Bild-URL
+D + E - Anzeigegröße (width x height)
+F + G - Tatsächliche Größe (naturalWidth x naturalHeight)
+
+Tatsächliche Dateigröße (naturalWidth x naturalHeight)	Anzeigendateigröße (width x height)	Anzeigendateigröße, optimiert lossless	Anzeigendateigröße, optimiert auf 85%	Ersparnis zwischen Anzeigendateigröße, optimiert auf 85% und der tatsächlichen Dateigröße, in %%	Ersparnis zwischen Anzeigendateigröße, optimiert auf 85% und der tatsächlichen Dateigröße, in Bytes
+=Dump(JsonPathOnUrl("http://api.resmush.it/ws.php?img=https://img.gs/plrglsbqqj/"&F2&"x"&G2&",quality=lossless/"&C2;"$src_size"))	=Dump(JsonPathOnUrl("http://api.resmush.it/ws.php?img=https://img.gs/plrglsbqqj/"&D2&"x"&E2&",quality=lossless/"&C2;"$src_size"))	=Dump(JsonPathOnUrl("http://api.resmush.it/ws.php?img=https://img.gs/plrglsbqqj/"&D2&"x"&E2&",quality=lossless/"&C2;"$dest_size"))	=Dump(JsonPathOnUrl("http://api.resmush.it/ws.php?img=https://img.gs/plrglsbqqj/"&D2&"x"&E2&",quality=lossless/"&C2&"&qlty=85";"$dest_size"))	=100-(K2*100/H2)	=k2-h2

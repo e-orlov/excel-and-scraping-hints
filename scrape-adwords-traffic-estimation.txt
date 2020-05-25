@@ -1,0 +1,10 @@
+=Dump(AdwordsKeywordSearchVolumes(A2;2276;1001;WAHR;"SearchVolume";WAHR))
+
+Einstellungen:
+	Keyword Search volumes
+	Location
+	Language
+	Google search only
+	Exclude headers
+	Formula
+	Dump

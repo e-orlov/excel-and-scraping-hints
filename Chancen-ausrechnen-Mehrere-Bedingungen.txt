@@ -1,0 +1,1 @@
+=WENN(UND(ODER(B2<E2;B2<H2);K2>50);"ja";"nein")

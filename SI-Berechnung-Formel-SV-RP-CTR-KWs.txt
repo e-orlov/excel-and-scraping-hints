@@ -1,0 +1,58 @@
+((SV/(RP-CTR/100))_kw1+(SV/(RP-CTR/100))_kw2+ ...+(SV/(RP-CTR/100))_kwN)/N
+((SV/(RP-CTR/100))_kw1^2+(SV/(RP-CTR/100))_kw2^2+ ...+(SV/(RP-CTR/100))_kwN^2)/N
+((SV/(RP-1/(1+CTR^2)))_kw1+(SV/(RP-1/(1+CTR^2)))_kw2+ ... (SV/(RP-1/(1+CTR^2)))_kwN)/N
+((SV^2/(RP-1/(1+CTR^2)))_kw1+(SV^2/(RP-1/(1+CTR^2)))_kw2+ ... (SV^2/(RP-1/(1+CTR^2)))_kwN)/N
+
+
+=(C4/B4)+D4
+
+C4 (Suchvolumen)	=SVERWEIS(A4;'[Versicherungen-Brand-Non-Brand-KWs-SV.xlsx]Brand+Non-Brand Keywords mit SV'!$A:$B;2;0)
+
+D4 (CTR)	=WENN(B4=1;"33,9";WENN(B4=2;"16,28";WENN(B4=3;"10,36";WENN(B4=4;"7";WENN(B4=5;"5,64")))))+WENN(B4=6;"4,13";WENN(B4=7;"3,27";WENN(B4=8;"2,61";WENN(B4=9;"2,18";WENN(B4=10;"1,82")))))+WENN(B4=11;"1,77";WENN(B4=12;"1,81";WENN(B4=13;"1,85";WENN(B4=14;"1,9";WENN(B4=15;"2,04")))))+WENN(B4=16;"1,68";WENN(B4=17;"1,61";WENN(B4=18;"1,65";WENN(B4=19;"1,62";WENN(B4=20;"1,59";"0")))))
+
+
+
+=((SVERWEIS(A4;'[Versicherungen-Brand-Non-Brand-KWs-SV.xlsx]Brand+Non-Brand Keywords mit SV'!$A:$B;2;0))/B4)+(WENN(B4=1;"33,9";WENN(B4=2;"16,28";WENN(B4=3;"10,36";WENN(B4=4;"7";WENN(B4=5;"5,64")))))+WENN(B4=6;"4,13";WENN(B4=7;"3,27";WENN(B4=8;"2,61";WENN(B4=9;"2,18";WENN(B4=10;"1,82")))))+WENN(B4=11;"1,77";WENN(B4=12;"1,81";WENN(B4=13;"1,85";WENN(B4=14;"1,9";WENN(B4=15;"2,04")))))+WENN(B4=16;"1,68";WENN(B4=17;"1,61";WENN(B4=18;"1,65";WENN(B4=19;"1,62";WENN(B4=20;"1,59";"0"))))))
+
+=WENNFEHLER(((SVERWEIS(A2;'[Versicherungen-Brand-Non-Brand-KWs-SV.xlsx]Brand+Non-Brand Keywords mit SV'!$A:$B;2;0))/B2)+(WENN(B2=1;"33,9";WENN(B2=2;"16,28";WENN(B2=3;"10,36";WENN(B2=4;"7";WENN(B2=5;"5,64")))))+WENN(B2=6;"4,13";WENN(B2=7;"3,27";WENN(B2=8;"2,61";WENN(B2=9;"2,18";WENN(B2=10;"1,82")))))+WENN(B2=11;"1,77";WENN(B2=12;"1,81";WENN(B2=13;"1,85";WENN(B2=14;"1,9";WENN(B2=15;"2,04")))))+WENN(B2=16;"1,68";WENN(B2=17;"1,61";WENN(B2=18;"1,65";WENN(B2=19;"1,62";WENN(B2=20;"1,59";"0"))))));0)
+
+***********************************************************************************
+
+1. Aus den exportierten CSV-Dateien Zeilen ohne Rankings löschen. .*>100.*[\n] - alle >100, oder .*>100$[\n] - nur in der letzten Spalte
+
+2. CSV-Dateien mergen. http://merge-csv.com/ - keep header nicht ankreuzen.
+
+3. Gemergte Datei in Excel importieren
+
+4. Spalte links für Domains erstellen, !!!WICHTIG!!! → mit Leerzelle unter Datum filtern - filtert man nach Leerzeilen in keywords, funktioniert Filter nicht!!!, Unnötiges bereinigen, Domains in die Spalte links kopieren und per VBA vervollständigen.
+
+Sub ausfuellen()
+With Intersect(Columns("A:A"), ActiveSheet.UsedRange)
+.SpecialCells(xlCellTypeBlanks).FormulaR1C1 = "=R[-1]C"
+.Value = .Value
+End With
+End Sub
+	
+5. Spalten rechts hinzufügen, Brand, SI
+
+6. Brand per SVerweis aus "\\glory\mediaworx\Anwender\Evgeniy\Versicherungen-Brand-Non-Brand-KWs-SV.xlsx" einlesen
+
+7. SI pro Keyword berechnen: 
+	=WENNFEHLER(((SVERWEIS(B2;'[Versicherungen-Brand-Non-Brand-KWs-SV-Final.xlsx]SV>10'!$A:$B;2;0))/C2)+(WENN(C2=1;"33,9";WENN(C2=2;"16,28";WENN(C2=3;"10,36";WENN(C2=4;"7";WENN(C2=5;"5,64")))))+WENN(C2=6;"4,13";WENN(C2=7;"3,27";WENN(C2=8;"2,61";WENN(C2=9;"2,18";WENN(C2=10;"1,82")))))+WENN(C2=11;"1,77";WENN(C2=12;"1,81";WENN(C2=13;"1,85";WENN(C2=14;"1,9";WENN(C2=15;"2,04")))))+WENN(C2=16;"1,68";WENN(C2=17;"1,61";WENN(C2=18;"1,65";WENN(C2=19;"1,62";WENN(C2=20;"1,59";"0"))))));0)
+	
+	=(WENNFEHLER(((SVERWEIS(B2;'[Versicherungen-Brand-Non-Brand-KWs-SV-Final.xlsx]SV>10'!$A:$B;2;0))/C2)+(WENN(C2=1;"33,9";WENN(C2=2;"16,28";WENN(C2=3;"10,36";WENN(C2=4;"7";WENN(C2=5;"5,64")))))+WENN(C2=6;"4,13";WENN(C2=7;"3,27";WENN(C2=8;"2,61";WENN(C2=9;"2,18";WENN(C2=10;"1,82")))))+WENN(C2=11;"1,77";WENN(C2=12;"1,81";WENN(C2=13;"1,85";WENN(C2=14;"1,9";WENN(C2=15;"2,04")))))+WENN(C2=16;"1,68";WENN(C2=17;"1,61";WENN(C2=18;"1,65";WENN(C2=19;"1,62";WENN(C2=20;"1,59";"0"))))));0))/120987
+	
+B2 - Keywords
+C2 - RP
+SV kommt per SVerweis in die SI-Formel
+
+9. BigQuery-Import: Komma zu Punkten, Spalte SI und SiBerechnet in Excel als Text formatieren, Werte mit Punkt als decimal einfügen, als CSV speichern. Beim Erstellen der tabelle in BQ erste Zeile ausschließen
+
+
+Weitere Formel für Top-20 SI:
+
+(SV*CTR)/KWn
+
+=(WENNFEHLER(G2*(WENN(G2=1;"0,339";WENN(G2=2;"0,1628";WENN(G2=3;"0,1036";WENN(G2=4;"7";WENN(G2=5;"0,0564")))))+WENN(G2=6;"0,0413";WENN(G2=7;"0,0327";WENN(G2=8;"0,0261";WENN(G2=9;"0,0218";WENN(G2=10;"0,0182")))))+WENN(G2=11;"0,0177";WENN(G2=12;"0,0181";WENN(G2=13;"0,0185";WENN(G2=14;"0,019";WENN(G2=15;"0,0204")))))+WENN(G2=16;"0,0168";WENN(G2=17;"0,0161";WENN(G2=18;"0,0165";WENN(G2=19;"0,0162";WENN(G2=20;"0,0159";"0"))))));0))/297
+
+=(WENNFEHLER(H2*(WENN(G2=1;"0,339";WENN(G2=2;"0,1628";WENN(G2=3;"0,1036";WENN(G2=4;"7";WENN(G2=5;"0,0564")))))+WENN(G2=6;"0,0413";WENN(G2=7;"0,0327";WENN(G2=8;"0,0261";WENN(G2=9;"0,0218";WENN(G2=10;"0,0182")))))+WENN(G2=11;"0,0177";WENN(G2=12;"0,0181";WENN(G2=13;"0,0185";WENN(G2=14;"0,019";WENN(G2=15;"0,0204")))))+WENN(G2=16;"0,0168";WENN(G2=17;"0,0161";WENN(G2=18;"0,0165";WENN(G2=19;"0,0162";WENN(G2=20;"0,0159";"0"))))));0))/1255

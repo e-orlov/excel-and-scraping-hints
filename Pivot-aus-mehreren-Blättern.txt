@@ -1,0 +1,12 @@
+Erstellung von Pivot aus mehreren Datenblättern:
+Pivot-Assistent (ALT + N + P) ->mehrere Konsolidierungsbereiche->einfache Seitenfelddarstellung
+Spalten nacheinander in jedem Tab auswahlen, hinzufügen.
+
+Nachdem Pivot gebaut wurde vergibt Excel den einzelnen Feldern unverständliche Namen. Damit es klar ist:
+
+In ZEILEN:
+Wert (Destination)
+Zeile (Source)
+
+In WERTE:
+Zeile (Anzahl von Zeilen)

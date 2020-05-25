@@ -1,0 +1,46 @@
+
+
+=importxml(A1,"//meta[@name='robots']/@content")
+=importXML(A1, “//link[@rel='canonical']/@href”)
+
+=ImportXML("{http://www.domain.com}/sitemap.xml", "//url/loc")
+
+=importXML(A1, "//title")
+
+=importXML(A1, “(//h1|//H1)”)
+
+
+=iferror(importxml(A1, "//meta[@property='og:title']/@content"), importxml(A1, "//title/text()")) <!-- wenn das bild gugl emploje oder ein div mit diesem bild kann nicht importiert -->
+=if(importxml(A1, "//meta[@property='og:title']/@content"), importxml(A1, "//title/text()"))
+
+=value(importXML("http://www.alexa.com/search?q="&B5,"//div[@class='row']/span/a[@href][1]"))
+
+To combine the page specific URL and root URL
+=CONCATENATE($A$2,D2)
+
+=IF(ISBLANK(B2);"-";
+  IF(ISBLANK(C2);"-";
+    IF(ISBLANK(D2);"-";
+      IF(
+        ISERROR(importxml(B2;"//a[text()='" & D2 & "']/@href"));
+        "Linktext nicht gefunden";
+        IF(importxml(B2;"//a[text()='" & D2 & "']/@href")=C2;
+          "OK";
+          "Link nicht gefunden"
+        )
+      )
+    )
+  )
+)
+
+
+=importxml(A1,"//meta[@name='robots']/@content")
+
+=importXML(A1, "//title")
+
+=iferror(importxml(A1,"//meta[@name='robots']/@content"), importxml(A1, "//title"), importxml(A1,"//meta[@name='description']/@content")) <!--wenn es robots gibt, wird r4obots geschrieben, unabhängig von title. wenn kein robots, wird title geschrieben.-->
+
+=if((A1, "//title"),"TRUE", importxml(A1,"//meta[@name='robots']/@content"))
+
+//meta[@name='description']/@content
+importxml(A1,"//meta[@name='description']/@content")

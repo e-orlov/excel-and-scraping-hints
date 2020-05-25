@@ -1,0 +1,5 @@
+=XPathOnUrl("https://www.google.de/search?sourceid=chrome-psyapi2&ion=1&espv=2&ie=UTF-8&q="&A:A&"&oq="&A:A&"&aqs=chrome..69i57j0l5.4263j0j7"; "//*[@id='rso']/div[2]/div/div")	=XPathOnUrl("https://www.google.de/search?sourceid=chrome-psyapi2&ion=1&espv=2&ie=UTF-8&q="&A:A&"&oq="&A:A&"&aqs=chrome..69i57j0l5.4263j0j7"; "//*[@id='rso']/div[3]/div/div")	=XPathOnUrl("https://www.google.de/search?sourceid=chrome-psyapi2&ion=1&espv=2&ie=UTF-8&q="&A:A&"&oq="&A:A&"&aqs=chrome..69i57j0l5.4263j0j7"; "//*[@id='rso']/div[4]/div/div")	=XPathOnUrl("https://www.google.de/search?sourceid=chrome-psyapi2&ion=1&espv=2&ie=UTF-8&q="&A:A&"&oq="&A:A&"&aqs=chrome..69i57j0l5.4263j0j7"; "//*[@id='rso']/div[5]/div/div")
+
+=XPathOnUrl("http://api.sistrix.net/keyword.us?api_key=BrWBmm8vbNK2drVGWSSxFChCD5Jbr2E6&kw="&A:A&"&date=now&country=de";"response/answer/result";"type")	=XPathOnUrl("http://api.sistrix.net/keyword.us?api_key=BrWBmm8vbNK2drVGWSSxFChCD5Jbr2E6&kw="&A:A&"&date=now&country=de";"response/answer/result";"position")
+
+http://api.sistrix.net/keyword.us?api_key=$key&kw=angela+merkel&date=now

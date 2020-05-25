@@ -1,0 +1,8 @@
+1. Screaming Frog Einstellungen vor dem Crawl: minimale Bild-Größe und minimale Alt-Länge auf 0 setzen (letzter Tab)
+2. Crawl starten
+3. Aus dem Crawl zwei Exporte ziehen:
+3.1. all image alt text (Bulk Export -> Images -> All Images Alt Text)
+3.2. internal images all (Tab Internal, Filter Images)
+4. Im Export 3.1 nur die Verweise mit dem Type IMG lassen (HREF herausfiltern), sonst bekommt man auch Bild-Verlinkungen mit rein.
+5. Im Export 3.1. Spalte Bildgröße erstellen und mit dem SVerweis aus dem Export 3.2. befüllen.
+6. Pivot bauen: Zeilen -> Source, Zeilen untergeordnet -> Destination, Werte -> Bildgröße, als Summe

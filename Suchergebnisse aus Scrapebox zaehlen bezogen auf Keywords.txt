@@ -1,0 +1,2 @@
+=zählenwenn($a$1:a1;a1)
+=countif($a$2:a2;a2)

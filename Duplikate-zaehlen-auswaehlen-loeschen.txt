@@ -1,0 +1,1 @@
+=ZÄHLENWENNS(A:A;A2)

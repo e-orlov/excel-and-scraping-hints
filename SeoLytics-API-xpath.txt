@@ -1,0 +1,1 @@
+=Dump(XPathOnUrl("https://tool.seolytics.com:443/api/9ab7b9ad-987a-4dab-8faf-b267fb42d459/ranking/lcc/de_de/keyword/"&A2&"?accept=application%2Fxml";"/rankings/ranking[1]/universal-types-on-page-one";""))

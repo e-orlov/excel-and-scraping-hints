@@ -1,0 +1,1 @@
+=WENN(a1="";"";ZÄHLENWENN(a:a;a1))

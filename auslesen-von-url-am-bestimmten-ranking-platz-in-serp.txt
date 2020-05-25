@@ -1,0 +1,1 @@
+=XPathOnUrl("https://www.google.de/search?num=100&safe=off&q="&A$2&"&oq="&A$2&"&gs_l=serp.12..0i71l8.0.0.0.895108.0.0.0.0.0.0.0.0..0.0....0...1c..64.serp..0.0.0.pR5I2rYNGEs"; "//*[@id='rso']/div[2]/li[1]/div/h3/a"; "href")

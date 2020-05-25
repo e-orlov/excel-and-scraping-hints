@@ -1,0 +1,1 @@
+=Dump(RegExpFind(A1;"(?s)<\s*form[^>]*>(.*?)<\s*/\s*form>";1))

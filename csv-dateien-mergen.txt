@@ -1,0 +1,6 @@
+
+ausfüren... CMD eingeben, mit cd .. bzw. cd C:\Temp\etc in den Verzeichnis mit CSV-Dateien navigieren
+Befehl eingeben:
+type *.csv >> name-der-ergebnis-datei.csv
+
+alle csv Dateien in diesem Verzeichnis werden zusammengefasst

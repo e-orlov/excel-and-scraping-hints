@@ -1,0 +1,6 @@
+/*/head/link[4]/@href
+/*/head/script/@src
+
+/html/head/link[4]
+
+/*/head/meta[23]/@content

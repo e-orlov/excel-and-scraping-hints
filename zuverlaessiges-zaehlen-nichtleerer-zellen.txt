@@ -1,0 +1,1 @@
+=ZEILEN(L3)-ZÄHLENWENN(L3;"")
